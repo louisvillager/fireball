@@ -1,0 +1,5 @@
+# To ignore files created by Visual Studio
+.vs/
+
+# Ignoring code snippets to save for later
+snippets.txt
