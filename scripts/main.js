@@ -10,6 +10,7 @@ var numSides = 0;
 const rollButton = document.getElementById('roll-dice');
 
 const outputTotal = document.getElementById('total-roll');
+var rollByRoll = document.getElementById('single-rolls');
 var singleRoll;
 var totalRoll;
 
@@ -18,19 +19,33 @@ var rollDie = function (x) {
   return (Math.floor(Math.random() * x) + 1);
 }
 
+// Event Handler for changing png of die depending on which
+// one chosen from drop-down
+
+// Roll! button click
 rollButton.addEventListener('click', () => {
   numDice = Math.abs(numInput.value);
   numSides = sidesInput.value;
-  if (numDice && numSides) {
+  if (numDice && (numSides > 0)) {
     totalRoll = 0;
+    rollByRoll.innerHTML = '';
     for (let i = 0; i < numDice; i++) {
       singleRoll = rollDie(numSides);
-      console.log(singleRoll);
+      //console.log(singleRoll);
       totalRoll += singleRoll;
+      var oneRoll = document.createElement('output');
+      oneRoll.className = 'single-out'
+      rollByRoll.appendChild(oneRoll);
+      oneRoll.innerHTML = singleRoll;
     }
-    console.log(totalRoll);
+    //console.log(totalRoll);
     outputTotal.innerHTML = totalRoll;
+
   } else {
-    alert('Please input the number of dice to roll.');
+    if (numDice) {
+      alert('Please choose number of sides on dice.');
+    } else {
+      alert('Please input the number of dice to roll.');
+    }
   }
 })

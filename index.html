@@ -27,6 +27,7 @@
   <!-- drop-down for sides on die -->
   <label>Sides<br />on Die
     <select id="die-sides" name="die-sides">
+      <option value=0>--</option>
       <option value=4>4</option>
       <option value=6>6</option>
       <option value=8>8</option>
@@ -46,9 +47,8 @@
     <h2>Total:</h2>
     <output id="total-roll" name="total-roll" class="total-out"></output>
     <!-- individual rolls go below -->
-    <div id="rolls">
       <h3>Roll by Roll:</h3>
-    </div>
+      <div id="single-rolls"></div>
   </div>
 
   <!-- FOOTER -->
