@@ -1,5 +1,7 @@
 # To ignore files created by Visual Studio
 .vs/
 
-# Ignoring code snippets to save for later
+# Ignoring working files
 snippets.txt
+img/roleplaying-polyhedral-dice-sets-bortonia.jpg
+img/Colors.txt
