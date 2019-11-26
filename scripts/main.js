@@ -9,6 +9,9 @@ var numSides = 0;
 // Roll! button
 const rollButton = document.getElementById('roll-dice');
 
+// Die Image
+var dieImage = document.getElementById('selected-die');
+
 const outputTotal = document.getElementById('total-roll');
 var rollByRoll = document.getElementById('single-rolls');
 var singleRoll;
@@ -21,11 +24,22 @@ var rollDie = function (x) {
 
 // Event Handler for changing png of die depending on which
 // one chosen from drop-down
+sidesInput.addEventListener('change', () => {
+  //console.log('Did you hear that?');
+  numSides = sidesInput.value;
+  if (numSides > 0) {
+    dieImage.setAttribute('src', 'img/r' + numSides + '.png');
+    dieImage.setAttribute('alt', 'Selected die');
+  } else {
+    dieImage.removeAttribute('src');
+    dieImage.removeAttribute('alt');
+  }
+})
+
 
 // Roll! button click
 rollButton.addEventListener('click', () => {
   numDice = Math.abs(numInput.value);
-  numSides = sidesInput.value;
   if (numDice && (numSides > 0)) {
     totalRoll = 0;
     rollByRoll.innerHTML = '';
