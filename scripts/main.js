@@ -1,3 +1,7 @@
+// ---------
+// VARIABLES
+// ---------
+
 // variable for number of dice being rolled
 const numInput = document.getElementById('num-dice');
 var numDice = 0;
@@ -68,7 +72,7 @@ rollButton.addEventListener('click', () => {
       singleRoll = rollDie(numSides);
       totalRoll += singleRoll;
       var oneRoll = document.createElement('output');
-      oneRoll.className = 'single-out'
+      oneRoll.className = 'single-out';
       rollByRoll.appendChild(oneRoll);
       oneRoll.innerHTML = singleRoll;
     }

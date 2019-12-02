@@ -5,42 +5,48 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Fireball!</title>
+  <link href="styles/bootstrap.min.css" rel="stylesheet" />
   <link href="styles/main.css" rel="stylesheet" />
 </head>
 
 <!-- BODY -->
 <body>
 
-  <!-- Nav -->
-
   <!-- MAIN -->
   <h1>I cast Fireball!</h1>
   <p class="subtitle">Or, you know, some other spell...</p>
 
   <!-- Number input -->
-  <label for="num-dice"># of<br />Dice
-    <input type="number" id="num-dice" name="num-dice" max="20" />
+  <label for="num-dice">
+    # of<br />Dice
+    <input type="number" id="num-dice" class="form-control" name="num-dice" max="20" />
   </label>
-  
-  <h3>d</h3>
+
   <!-- drop-down for sides on die -->
-  <label>Sides<br />on Die
-    <select id="die-sides" name="die-sides">
-      <option value=0>--</option>
-      <option value=4>4</option>
-      <option value=6>6</option>
-      <option value=8>8</option>
-      <option value=10>10</option>
-      <option value=12>12</option>
-      <option value=20>20</option>
-    </select>
+  <label>
+    Sides<br />on Die
+    <span class="input-group mb-3">
+      <span class="input-group-prepend">
+        <span class="input-group-text" id="basic-addon1">d</span>
+      </span>
+      <select id="die-sides" class="form-control" name="die-sides">
+        <option value=0>--</option>
+        <option value=4>4</option>
+        <option value=6>6</option>
+        <option value=8>8</option>
+        <option value=10>10</option>
+        <option value=12>12</option>
+        <option value=20>20</option>
+      </select>
+    </span>
   </label>
+
   <!-- png of die determined by which one chosen -->
   <!-- Image dynamically selected in JS -->
   <img id="selected-die" class="selected-die">
 
   <!-- Button -->
-  <button id="roll-dice" name="roll-dice">Roll!</button>
+  <button id="roll-dice" class="btn btn-secondary" name="roll-dice">Roll!</button>
 
   <!-- div showing total and individual rolls -->
   <div id="output">
@@ -48,13 +54,14 @@
     <h2>Total:</h2>
     <output id="total-roll" name="total-roll" class="total-out"></output>
     <!-- individual rolls go below -->
-      <h3>Roll by Roll:</h3>
-      <div id="single-rolls"></div>
+    <h3>Roll by Roll:</h3>
+    <div id="single-rolls"></div>
   </div>
 
   <!-- FOOTER -->
   <!-- Scripts -->
   <script src="scripts/jquery-3.4.1.min.js"></script>
+  <script src="scripts/bootstrap.min.js"></script>
   <script src="scripts/main.js"></script>
 
 </body>
