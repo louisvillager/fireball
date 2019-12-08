@@ -2,6 +2,7 @@
 
 ## FIREBALL!
 _(A personal project for brushing up on front-end skills)_
+<br>***This is a work in progress!***
 
 This is a personal project designed to help me expand on the front-end development skills
 I began learning as part of the Code Louisville course.  Its primary focus is on number generation, 
@@ -20,7 +21,7 @@ flourishes just for fun.
 The user enters the number of dice being rolled (in the field `# of Dice`) and what type of 
 die is being rolled (in the `Sides on Die` drop-down).  The chosen die type will display
 graphically below the form controls.
-When the user hits `Roll!`, the total of all random rolls will display under `Total`,
+When the user hits `Roll!`, the total of all rolls will display under `Total`,
 with each individual roll value being output beneath that, under `Roll by Roll`.
 
 ### Notes:
