@@ -43,7 +43,6 @@ var rollDie = function (x) {
 
 // Load Page
 document.addEventListener('DOMContentLoaded', (event) => {
-  //console.log('DOM fully loaded and parsed');
   randColor = colorPicker();
   console.log(spectrum[randColor]);
 });
@@ -53,7 +52,6 @@ document.addEventListener('DOMContentLoaded', (event) => {
 sidesInput.addEventListener('change', () => {
   numSides = sidesInput.value;
   if (numSides > 0) {
-    //dieImage.setAttribute('src', 'img/r' + numSides + '.png');
     dieImage.setAttribute('src', 'img/' + spectrum[randColor] + numSides + '.png');
     dieImage.setAttribute('alt', 'Selected die');
   } else {
@@ -80,7 +78,7 @@ rollButton.addEventListener('click', () => {
 
   } else {
     if (numDice) {
-      alert('Please choose number of sides on dice.');
+      alert('Please choose the number of sides on dice.');
     } else {
       alert('Please input the number of dice to roll.');
     }
