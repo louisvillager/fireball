@@ -13,52 +13,59 @@
 <body>
 
   <!-- MAIN -->
-  <h1>I cast Fireball!</h1>
-  <p class="subtitle">Or, you know, some other spell...</p>
+  <main>
+    <h1>I cast Fireball!</h1>
+    <p class="subtitle">Or, you know, some other spell...</p>
 
-  <!-- Number input -->
-  <label for="num-dice">
-    # of<br />Dice
-    <input type="number" id="num-dice" class="form-control" name="num-dice" max="20" />
-  </label>
+    <!-- Number input -->
+    <label for="num-dice">
+      # of<br />Dice
+      <input type="number" id="num-dice" class="form-control" name="num-dice" max="20" />
+    </label>
 
-  <!-- drop-down for sides on die -->
-  <label>
-    Sides<br />on Die
-    <span class="input-group mb-3">
-      <span class="input-group-prepend">
-        <span class="input-group-text" id="basic-addon1">d</span>
+    <!-- drop-down for sides on die -->
+    <label>
+      Sides<br />on Die
+      <span class="input-group mb-3">
+        <span class="input-group-prepend">
+          <span class="input-group-text" id="basic-addon1">d</span>
+        </span>
+        <select id="die-sides" class="form-control" name="die-sides">
+          <option value=0>--</option>
+          <option value=4>4</option>
+          <option value=6>6</option>
+          <option value=8>8</option>
+          <option value=10>10</option>
+          <option value=12>12</option>
+          <option value=20>20</option>
+        </select>
       </span>
-      <select id="die-sides" class="form-control" name="die-sides">
-        <option value=0>--</option>
-        <option value=4>4</option>
-        <option value=6>6</option>
-        <option value=8>8</option>
-        <option value=10>10</option>
-        <option value=12>12</option>
-        <option value=20>20</option>
-      </select>
-    </span>
-  </label>
+    </label>
 
-  <!-- png of die determined by which one chosen -->
-  <!-- Image dynamically selected in JS -->
-  <img id="selected-die" class="selected-die">
+    <!-- png of die determined by which one chosen -->
+    <!-- Image dynamically selected in JS -->
+    <img id="selected-die" class="selected-die">
 
-  <!-- Button -->
-  <button id="roll-dice" class="btn btn-secondary" name="roll-dice">Roll!</button>
+    <!-- Button -->
+    <button id="roll-dice" class="btn btn-secondary" name="roll-dice">Roll!</button>
 
-  <!-- div showing total and individual rolls -->
-  <div id="output">
-    <!-- Total goes on top -->
-    <h2>Total:</h2>
-    <output id="total-roll" name="total-roll" class="total-out"></output>
-    <!-- individual rolls go below -->
-    <h3>Roll by Roll:</h3>
-    <div id="single-rolls"></div>
-  </div>
+    <!-- div showing total and individual rolls -->
+    <div id="output">
+      <!-- Total goes on top -->
+      <h2>Total:</h2>
+      <output id="total-roll" name="total-roll" class="total-out"></output>
+      <!-- individual rolls go below -->
+      <h3>Roll by Roll:</h3>
+      <div id="single-rolls"></div>
+    </div>
+  </main>
 
   <!-- FOOTER -->
+  <footer class="footer">
+    <p>&copy; 2019 Marc Rivers</p>
+    <a href="mailto:mrivers2133@outlook.com"><img src="img/mail.png" class="social-icon" /></a>
+  </footer>
+
   <!-- Scripts -->
   <script src="scripts/jquery-3.4.1.min.js"></script>
   <script src="scripts/bootstrap.min.js"></script>

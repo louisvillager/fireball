@@ -1,10 +1,5 @@
 /*** GENERAL ***/
 
-/* For when you need to find the boundaries of a div or other container */
-.find-edge{
-  border: 2px dashed red;
-}
-
 /* Hiding Number Spinners */
 input[type=number]::-webkit-inner-spin-button,
 input[type=number]::-webkit-outer-spin-button {
@@ -15,8 +10,33 @@ input[type='number'] {
   -moz-appearance: textfield;
 }
 
+h3 {
+  padding-top: 1rem;
+}
+
+
+/*** BODY ***/
+
+main {
+  margin: 1em 0 0 2em;
+}
+
+/*.output {
+  flex: 1;
+}*/
+
 .total-out {
-/* for the Total Output */
+  /* for the Total Output */
+  display: inline-block;
+  width: 150px;
+  height: 75px;
+  background-color: #8b1418;
+  border-radius: .75rem;
+  font-size: 3em;
+  /*align-items: center;*/
+  vertical-align: middle;
+  text-align: center;
+  color: #f5db84;
 }
 
 .single-out {
@@ -24,7 +44,20 @@ input[type='number'] {
 }
 
 
-/*** BODY ***/
+/*** FOOTER ***/
+.footer{
+  padding-left: 1em;
+}
+
+.footer p {
+  display: inline-block;
+}
+
+.social-icon {
+  width: 40px;
+  height: 40px;
+  margin: 0px;
+}
 
 /*** FONTS ***/
 
