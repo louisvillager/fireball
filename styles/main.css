@@ -21,31 +21,30 @@ main {
   margin: 1em 0 0 2em;
 }
 
-/*.output {
-  flex: 1;
-}*/
+.total-out,
+.single-out {
+  border-radius: .75rem;
+  vertical-align: middle;
+  text-align: center;
+}
 
 .total-out {
-  /* for the Total Output */
   display: inline-block;
   width: 150px;
   height: 75px;
-  background-color: #8b1418;
-  border-radius: .75rem;
   font-size: 3em;
-  /*align-items: center;*/
-  vertical-align: middle;
-  text-align: center;
-  color: #f5db84;
 }
 
 .single-out {
-/* for the Roll-by-Roll Output */
+  width: 75px;
+  height: 50px;
+  font-size: 2em;
+  margin: 5px 10px;
 }
 
 
 /*** FOOTER ***/
-.footer{
+.footer {
   padding-left: 1em;
 }
 

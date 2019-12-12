@@ -18,6 +18,8 @@ var dieImage = document.getElementById('selected-die');
 var spectrum = ['r', 'o', 'y', 'g', 'b', 'v'];
 var randColor;
 
+// Outputs
+var backColor = ['#8b1418', '#b04f24', '#eab430', '#5e823c', '#36727c','#543875'];
 const outputTotal = document.getElementById('total-roll');
 var rollByRoll = document.getElementById('single-rolls');
 var singleRoll;
@@ -69,13 +71,30 @@ rollButton.addEventListener('click', () => {
     for (let i = 0; i < numDice; i++) {
       singleRoll = rollDie(numSides);
       totalRoll += singleRoll;
+
+      // Total displayed
+      outputTotal.innerHTML = totalRoll;
+      outputTotal.style.backgroundColor = backColor[randColor];
+      if (randColor == 2) {
+        outputTotal.style.color = '#000';
+      } else {
+        outputTotal.style.color = '#f5db84';
+      }
+
+      // Single rolls displayed
       var oneRoll = document.createElement('output');
       oneRoll.className = 'single-out';
       rollByRoll.appendChild(oneRoll);
       oneRoll.innerHTML = singleRoll;
+      oneRoll.style.backgroundColor = backColor[randColor];
+      if (randColor == 2) {
+        oneRoll.style.color = '#000';
+      } else {
+        oneRoll.style.color = '#f5db84';
+      }
     }
-    outputTotal.innerHTML = totalRoll;
 
+    // Error Message - Fields not filled
   } else {
     if (numDice) {
       alert('Please choose the number of sides on dice.');
