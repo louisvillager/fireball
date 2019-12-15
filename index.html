@@ -44,10 +44,14 @@
 
     <!-- png of die determined by which one chosen -->
     <!-- Image dynamically selected in JS -->
-    <img id="selected-die" class="selected-die">
+    <div id="img-button-row">
+      <div id="img-holder">
+        <img id="selected-die" class="selected-die" src="img/init.png">
+      </div>
 
-    <!-- Button -->
-    <button id="roll-dice" class="btn btn-secondary" name="roll-dice">Roll!</button>
+      <!-- Button -->
+      <button id="roll-dice" class="btn btn-secondary" name="roll-dice">Roll!</button>
+    </div>
 
     <!-- div showing total and individual rolls -->
     <div id="output">
@@ -63,7 +67,8 @@
   <!-- FOOTER -->
   <footer class="footer">
     <p>&copy; 2019 Marc Rivers</p>
-    <a href="mailto:mrivers2133@outlook.com"><img src="img/mail.png" class="social-icon" /></a>
+    <a href="mailto:mrivers2133@outlook.com"><img src="img/mail-light.png" class="social-icon" /></a>
+    <!-- Mail envelope image from iconfinder.com -->
   </footer>
 
   <!-- Scripts -->

@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css?family=Della+Respira|Overlock&display=swap');
+
 /*** GENERAL ***/
 
 /* Hiding Number Spinners */
@@ -17,8 +19,32 @@ h3 {
 
 /*** BODY ***/
 
+body {
+  background-image: url(../img/cork-wallet.png); /* Background pattern from Toptal Subtle Patterns */
+}
+
 main {
   margin: 1em 0 0 2em;
+}
+
+#num-dice {
+  width: 100px;
+}
+
+#img-button-row {
+  max-height: 140px;
+  display: flex;
+  align-items: center;
+}
+
+#img-holder {
+  display: inline-block;
+  min-height: 140px;
+  min-width: 140px;
+}
+
+#roll-dice {
+  background-color: #245559;
 }
 
 .total-out,
@@ -42,24 +68,48 @@ main {
   margin: 5px 10px;
 }
 
+#single-rolls {
+  min-height: 60px;
+  max-width: 525px;
+  margin-left: -10px;
+  display: flex;
+  flex-wrap: wrap;
+}
+
 
 /*** FOOTER ***/
 .footer {
-  padding-left: 1em;
+  background: linear-gradient(
+    to right,
+    #245559,
+    rgb(0,0,0,0) 85%);
+  margin-top: 1em;
 }
 
 .footer p {
   display: inline-block;
+  margin-left: 1em;
+  padding-top: .5em;
+  color: #f0ead6;
 }
 
 .social-icon {
   width: 40px;
   height: 40px;
-  margin: 0px;
+  margin-left: 1em;
 }
 
-/*** FONTS ***/
 
-/*** COLORS ***/
+/*** FONTS ***/
+h1, h2, h3 {
+  font-family: 'Della Respira', serif;
+}
+
+p,
+label {
+  font-family: 'Overlock', sans-serif;
+  font-size: 1.25em;
+}
+
 
 /*** MEDIA QUERIES ***/
