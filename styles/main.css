@@ -113,3 +113,15 @@ label {
 
 
 /*** MEDIA QUERIES ***/
+@media screen and (min-width: 500px) {
+  #img-button-row {
+    display: inline-block;
+  }
+
+  .footer {
+    background: linear-gradient(
+      to right,
+      #245559,
+      rgb(0,0,0,0) 75%);
+  }
+}
