@@ -2,7 +2,6 @@
 
 ## FIREBALL!
 _(A personal project for brushing up on front-end skills)_
-<br>***This is a work in progress!***
 
 This is a personal project designed to help me expand on the front-end development skills
 I began learning as part of the Code Louisville course.  Its primary focus is on number generation, 
