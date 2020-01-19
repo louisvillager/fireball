@@ -1,12 +1,17 @@
-# Marc Rivers
-
-## FIREBALL!
-_(A personal project for brushing up on front-end skills)_
+# FIREBALL!
+### by Marc Rivers
 
 This is a personal project designed to help me expand on the front-end development skills
 I began learning as part of the Code Louisville course.  Its primary focus is on number generation, 
 dynamic styling, and some minor DOM manipulation through Javascript.  There is only one page as
 part of this project.
+
+---
+
+## Update Log
+
+**Version 1.1**
+- Converted vanilla JavaScript to more compact jQuery
 
 ---
 
