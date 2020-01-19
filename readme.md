@@ -11,6 +11,7 @@ part of this project.
 ## Update Log
 
 **Version 1.1**
+(*Still in progress*)
 - Converted vanilla JavaScript to more compact jQuery
 
 ---
