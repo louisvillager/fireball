@@ -1,33 +1,29 @@
 // Version 1.1
 //
 // 1.1 Changes:
-// Converted vanilla JavaScript to jQuery
-// Added animation effects to number output
+// Converted vanilla JavaScript to jQuery.
+// Added animation effects to selected die
+// and number output.
 
 // ---------
 // VARIABLES
 // ---------
 
 // variable for number of dice being rolled
-//const numInput = document.getElementById('num-dice');
 var numDice = 0;
 
 // variable for sides on die
-//const sidesInput = document.getElementById('die-sides');
 var numSides = 0;
 
 // Roll! button
 //const rollButton = document.getElementById('roll-dice');
 
 // Die Image
-//var dieImage = document.getElementById('selected-die');
 var spectrum = ['r', 'o', 'y', 'g', 'b', 'v'];
 var randColor;
 
 // Outputs
 var backColor = ['#8b1418', '#b04f24', '#eab430', '#5e823c', '#36727c','#543875'];
-//const outputTotal = document.getElementById('total-roll');
-//var rollByRoll = document.getElementById('single-rolls');
 var singleRoll;
 var totalRoll;
 
@@ -49,65 +45,46 @@ var rollDie = function (x) {
 // EVENT LISTENERS
 //----------------
 
-// Load Page
-//document.addEventListener('DOMContentLoaded', (event) => {
+// Choose color on page load
 $(document).ready(function () {
   randColor = colorPicker();
+  // log selected color to console
   console.log(spectrum[randColor]);
 });
 
-// Changing png of die depending on which
-// one chosen from drop-down
-//sidesInput.addEventListener('change', function(evt) {
+// Change image of die depending on
+// selection from drop-down
 $('#die-sides').change(function () {
-  //numSides = sidesInput.value;
   numSides = $('#die-sides').val();
+// Die image fades out and back in
+// upon change
   if (numSides > 0) {
-    //dieImage.setAttribute('src', 'img/' + spectrum[randColor] + numSides + '.png');
-    //dieImage.setAttribute('alt', 'Selected die');
-    $('#selected-die').slideUp(150).
-      slideDown(250).
-      attr({
-      src: 'img/' + spectrum[randColor] + numSides + '.png',
-      alt: 'Selected die'
+    $('#img-holder').fadeOut(150, function () {
+      $('#selected-die').attr('src',
+        'img/' + spectrum[randColor] + numSides + '.png');
     });
+    $('#img-holder').fadeIn(350);
   } else {
-    //dieImage.removeAttribute('src');
-    //dieImage.removeAttribute('alt');
-    $('#selected-die').removeAttr('src alt');
+    $('#selected-die').attr('src', 'img/init.png');
   }
 });
 
 // Roll! button click
-//rollButton.addEventListener('click', function(evt) {
 $('#roll-dice').click(function () {
-  //numDice = Math.abs(numInput.value);
   numDice = Math.abs($('#num-dice').val());
   if (numDice && (numSides > 0)) {
+    // Total value of dice rolled
     totalRoll = 0;
-    //rollByRoll.innerHTML = '';
     $('#single-rolls').html(null);
+    console.log($('#total-roll-id').html().val);
     for (let i = 0; i < numDice; i++) {
+      //console.log(`rolling ${i+1} now`);
       singleRoll = rollDie(numSides);
       totalRoll += singleRoll;
-
-      // Total displayed
-      //outputTotal.innerHTML = totalRoll;
-      $('#total-roll').html(totalRoll);
-      //outputTotal.style.backgroundColor = backColor[randColor];
-      $('#total-roll').css('backgroundColor', backColor[randColor]);
-      if (randColor == 2) {
-        //outputTotal.style.color = '#000';
-        $('#total-roll').css('color', '#000');
-      } else {
-        //outputTotal.style.color = '#f5db84';
-        $('#total-roll').css('color', '#f5db84');
-      }
 
       // Single rolls displayed
       var oneRoll = document.createElement('output');
       oneRoll.className = 'single-out';
-      //rollByRoll.appendChild(oneRoll);
       $('#single-rolls').append(oneRoll);
       oneRoll.innerHTML = singleRoll;
       oneRoll.style.backgroundColor = backColor[randColor];
@@ -117,6 +94,31 @@ $('#roll-dice').click(function () {
         oneRoll.style.color = '#f5db84';
       }
     }
+
+    // Total displayed
+    $('#total-roll-id').css('backgroundColor', backColor[randColor]);
+    if (randColor == 2) {
+      $('#total-roll-id').css('color', '#000');
+    } else {
+      $('#total-roll-id').css('color', '#f5db84');
+    }
+
+    if ($('#total-roll-id').html() > 0) {
+      $('#number-out-id').hide('slide', 'swing', 250, function () {
+        $('#total-roll-id').html(totalRoll);
+      });
+      $('#number-out-id').show('slide', 'swing', 400);
+    } else {
+      $('#total-roll-id').html(totalRoll);
+    }
+
+    //console.log($('#total-roll-id').html());
+
+    // Test hide() animation on #hiding-test
+    //let disp = window.getComputedStyle(document.getElementById('hiding-test'), null).
+    //  getPropertyValue('display');
+    //$('#hiding-test').hide('slide', 150);
+    //$('#hiding-test').show('slide', 350);
 
     // Error Message - Fields not filled
   } else {

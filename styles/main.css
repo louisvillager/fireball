@@ -27,6 +27,21 @@ main {
   margin: 1em 0 0 2em;
 }
 
+/* For testing purposes */
+/* To make div areas visible */
+.faeriefire {
+  background-color: coral;
+  border: 1px solid black;
+  /*display: inline-block;*/
+}
+
+#inner-div {
+  background-color: olivedrab;
+  border: 1px solid black;
+  width: 100px;
+  height: 75px;
+}
+
 #num-dice {
   width: 100px;
 }
@@ -39,13 +54,20 @@ main {
 
 #img-holder {
   display: inline-block;
-  min-height: 140px;
+  /*min-height: 140px;*/
   min-width: 140px;
+  text-align: center;
 }
 
 #roll-dice {
   background-color: #245559;
 }
+
+/*#hiding-test {
+  height: 75px;
+  width: 150px;
+  margin-bottom: 1em;
+}*/
 
 .total-out,
 .single-out {
