@@ -15,9 +15,6 @@ var numDice = 0;
 // variable for sides on die
 var numSides = 0;
 
-// Roll! button
-//const rollButton = document.getElementById('roll-dice');
-
 // Die Image
 var spectrum = ['r', 'o', 'y', 'g', 'b', 'v'];
 var randColor;
@@ -56,8 +53,7 @@ $(document).ready(function () {
 // selection from drop-down
 $('#die-sides').change(function () {
   numSides = $('#die-sides').val();
-// Die image fades out and back in
-// upon change
+// Animation for changing die image
   if (numSides > 0) {
     $('#img-holder').fadeOut(150, function () {
       $('#selected-die').attr('src',
@@ -76,9 +72,7 @@ $('#roll-dice').click(function () {
     // Total value of dice rolled
     totalRoll = 0;
     $('#single-rolls').html(null);
-    console.log($('#total-roll-id').html().val);
     for (let i = 0; i < numDice; i++) {
-      //console.log(`rolling ${i+1} now`);
       singleRoll = rollDie(numSides);
       totalRoll += singleRoll;
 
@@ -93,7 +87,7 @@ $('#roll-dice').click(function () {
       } else {
         oneRoll.style.color = '#f5db84';
       }
-    }
+    }    
 
     // Total displayed
     $('#total-roll-id').css('backgroundColor', backColor[randColor]);
@@ -103,22 +97,16 @@ $('#roll-dice').click(function () {
       $('#total-roll-id').css('color', '#f5db84');
     }
 
+    // Total output hides, changes value, then shows.
+    // If rolling for first time, no animated effect.
     if ($('#total-roll-id').html() > 0) {
-      $('#number-out-id').hide('slide', 'swing', 250, function () {
+      $('#number-out-id').toggle('slide', 'swing', 400, function () {
         $('#total-roll-id').html(totalRoll);
       });
-      $('#number-out-id').show('slide', 'swing', 400);
+      $('#number-out-id').toggle('slide', 'swing', 400);
     } else {
       $('#total-roll-id').html(totalRoll);
     }
-
-    //console.log($('#total-roll-id').html());
-
-    // Test hide() animation on #hiding-test
-    //let disp = window.getComputedStyle(document.getElementById('hiding-test'), null).
-    //  getPropertyValue('display');
-    //$('#hiding-test').hide('slide', 150);
-    //$('#hiding-test').show('slide', 350);
 
     // Error Message - Fields not filled
   } else {
